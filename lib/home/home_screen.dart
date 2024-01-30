@@ -33,12 +33,14 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     return Scaffold(
       appBar: AppBar(
         title: const Text("Task Manager"),
-        elevation: 2,
+        elevation: 0,
         titleTextStyle: myAppBarTextStyle,
         backgroundColor: Colors.white,
       ),
       
-      body: DefaultTabController(length: 3, 
+      body: DefaultTabController(
+      
+        length: 3, 
       child:  Column(
        children: [
 
