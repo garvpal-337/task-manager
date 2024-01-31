@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       body: DefaultTabController(
       
         length: 3, 
+      
       child:  Column(
        children: [
 
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   onTap: (value) {
     taskProv.updateTab(value);
   },
+ 
   tabs: myTabs.map((tabText) {
          final isSelected = taskProv.selectedTab == myTabs.indexOf(tabText);
          return Container(
@@ -75,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
        }).toList(),),
         Expanded(child: TabBarView(
           controller: _tabController,
+          physics:const  NeverScrollableScrollPhysics(),
           children: [
           TaskView(tasks: tasks,seletedTab: taskProv.selectedTab,),
           TaskView(tasks: tasks.where((element) => element.isCompleted == false).toList(),seletedTab: taskProv.selectedTab,),

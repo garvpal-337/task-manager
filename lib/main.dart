@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => TaskProvider(),)
-        // Provider(create: (context) => TaskProvider(),)
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
